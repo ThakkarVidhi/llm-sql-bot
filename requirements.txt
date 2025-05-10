@@ -1,0 +1,10 @@
+sqlalchemy
+pymysql
+python-dotenv
+langchain
+cryptography
+streamlit
+mysql-connector-python
+llama-cpp-python
+langchain_community
+sqlglot

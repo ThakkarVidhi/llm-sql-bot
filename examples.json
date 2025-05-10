@@ -1,0 +1,18 @@
+[
+    {
+      "input": "How many total customers present",
+      "query": "SELECT COUNT(*) AS total_customers FROM ecommerce.customers;"
+    },
+    {
+      "input": "Get the order number for the orders whose status is Processing",
+      "query": "SELECT ordernumber FROM ecommerce.orders WHERE status = 'Processing';"
+    },
+    {
+      "input": "Get the name of customer and order status for those orders which are still in Processing status",
+      "query": "SELECT c.name, o.status FROM ecommerce.customers c JOIN ecommerce.orders o ON c.customerid = o.customerid WHERE o.status = 'Processing';"
+    },
+    {
+      "input": "Get the order status and payment amount and payment method for the customer - Alice Johnson",
+      "query": "SELECT o.status, p.payment_amount, p.payment_method FROM ecommerce.customers c JOIN ecommerce.orders o ON c.customerid = o.customerid JOIN ecommerce.payments p ON o.ordernumber = p.ordernumber WHERE c.name = 'Alice Johnson';"
+    }
+]  
