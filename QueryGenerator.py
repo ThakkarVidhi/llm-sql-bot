@@ -78,9 +78,6 @@ class SQLQueryGenerator:
 
         # Final prompt template that includes the few-shot examples
         final_prompt = ChatPromptTemplate.from_messages([
-            # ("system", f"You are a MySQL expert. Given an input question, create a syntactically correct MySQL query to run. Consider the following table schema: {table_info}\n\n"),
-            # few_shot_prompt,
-            # ("human", "{input}")
             ("system", 
             """You are an expert MySQL query generator. Your task is to generate a syntactically correct and optimized MySQL query based on the user’s input. 
 
@@ -96,9 +93,6 @@ class SQLQueryGenerator:
             few_shot_prompt,
             ("human", "{input}")
         ])
-        
-        # Explicitly set the input variables for the final prompt
-        # final_prompt.input_variables = ["input", "top_k", "table_info"]
 
         print("Generated final prompt:")
         print(final_prompt)
